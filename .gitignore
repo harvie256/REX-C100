@@ -15,10 +15,10 @@
 *.uvopt
 *.uvproj
 
-*.cydsn/codegentemp
-*.cydsn/CortexM0
-*.cydsn/Generated_Source
-*.cydsn/Export
+codegentemp/
+CortexM0/
+Generated_Source/
+Export/
 
 
 #===========================
