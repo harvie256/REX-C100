@@ -1,3 +1,28 @@
+# ==========================
+# PSOC Creator Files
+# ==========================
+
+.DS_Store
+*.cywrk.*
+*.cywrk
+*.cyprj.*
+*.cycdx
+*.cyfit
+*.cyversion
+*.rpt
+*.svd
+*_timing.html
+*.uvopt
+*.uvproj
+
+*.cydsn/codegentemp
+*.cydsn/CortexM0
+*.cydsn/Generated_Source
+*.cydsn/Export
+
+
+#===========================
+
 # Object files
 *.o
 *.ko
