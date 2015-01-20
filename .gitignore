@@ -19,8 +19,13 @@ codegentemp/
 CortexM0/
 Generated_Source/
 Export/
+#===========================
 
-
+#===========================
+# Kicad Files
+#===========================
+*.*bak
+*.*bck
 #===========================
 
 # Object files

@@ -1,0 +1,206 @@
+Cmp-Mod V01 Created by Cvpcb (2014-12-04 BZR 5312)-product   date = 8/01/2015 10:22:49 AM
+
+BeginCmp
+TimeStamp = /54ADB78A;
+Reference = BR1;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB7BD;
+Reference = BR2;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB7DE;
+Reference = BR3;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB804;
+Reference = BR4;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB82B;
+Reference = BR5;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB853;
+Reference = BR6;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB878;
+Reference = BR7;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADB89E;
+Reference = BR8;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADC638;
+Reference = BR9;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADCF59;
+Reference = BR10;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADD0CD;
+Reference = BR11;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADD0F7;
+Reference = BR12;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADD122;
+Reference = BR13;
+ValeurCmp = Bridge_Connector;
+IdModule  = C100 specific:Bridge_Conn;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC94FB;
+Reference = C1;
+ValeurCmp = 100n;
+IdModule  = Resistors_SMD:R_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC954C;
+Reference = C2;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC97FC;
+Reference = C3;
+ValeurCmp = 100n;
+IdModule  = Resistors_SMD:R_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC9854;
+Reference = C4;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ACA623;
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = Resistors_SMD:R_0603_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADAECE;
+Reference = C6;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AC9FEB;
+Reference = C7;
+ValeurCmp = 1u;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AD132C;
+Reference = J1;
+ValeurCmp = C100_display_connector;
+IdModule  = C100 specific:C100_display_edge_connector;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADA951;
+Reference = P1;
+ValeurCmp = CONN_01X02;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AE08DE;
+Reference = P2;
+ValeurCmp = CONN_01X08;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADADFD;
+Reference = P3;
+ValeurCmp = CONN_01X08;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADE197;
+Reference = P4;
+ValeurCmp = CONN_01X04;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x04;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADFF47;
+Reference = P5;
+ValeurCmp = CONN_01X04;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x04;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AE1355;
+Reference = P6;
+ValeurCmp = CONN_01X04;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x04;
+EndCmp
+
+BeginCmp
+TimeStamp = /54ADF0E8;
+Reference = R1;
+ValeurCmp = 4K7;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /54AD0963;
+Reference = U1;
+ValeurCmp = CY8C4245AXI-483;
+IdModule  = SMD_Packages:TQFP-44;
+EndCmp
+
+EndListe
