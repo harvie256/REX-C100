@@ -15,6 +15,7 @@
 *.uvopt
 *.uvproj
 
+Docs/
 codegentemp/
 CortexM0/
 Generated_Source/

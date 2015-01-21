@@ -1,31 +1,32 @@
 
 #include <project.h>
+#include "main.h"
 #include "Display.h"
-
-#define SYSTICK_INTERRUPT_VECTOR_NUMBER 15u /* Cortex-M0 hard vector */
-/* clock and interrupt rates, in Hz */
-#define CLOCK_FREQ 24000000u
-#define INTERRUPT_FREQ 500u
+#include "DS18B20.h"
 
 void uart_init();
-
 
 CY_ISR(SysTick_ISR)
 {
     DisplayScan();
 }
 
-void system_init()
+unsigned char system_init()
 {
+    unsigned char error = 0;
     /* point the Systick vector to the ISR */
     CyIntSetSysVector(SYSTICK_INTERRUPT_VECTOR_NUMBER, SysTick_ISR);
     /* Set the number of ticks between interrupts.
     Ignore the function success/fail return value */
-
     (void)SysTick_Config(CLOCK_FREQ / INTERRUPT_FREQ);
-    /* Enable Global Interrupt */
-    CyGlobalIntEnable; 
+
+    
+    //Setup peripheral systems
     uart_init();
+    error |= DS18B20_init();
+
+    CyGlobalIntEnable;
+    return error;
 }
 
 // Setup the uart in open collector drive, allowing the 5V PSOC
@@ -39,21 +40,27 @@ void uart_init()
 
 int main()
 {
-    system_init();
+    if(system_init())
+    {
+        // Problems initialising hardware, endless loop flashing AT light at 5hz
+        for(;;)
+        {
+            SetLED(LED_AT);
+            CyDelay(100);
+            ClearLED(LED_AT);
+            CyDelay(100);
+        }
+    }
     
-    SetUpperPoint(ON);
-    SetLowerPoint(OFF);
-    
-    short counter = 0;
+    // Loop getting and displaying the temp at 1hz
     for(;;)
     {
-        SetDisplayChars(counter++, displayChars);
-        SetLED(LED_AT);
-        CyDelay(500);
-        //UART_1_UartPutString("this is a string");
-        SetDisplayChars(-(counter++), displayChars + 4);
-        ClearLED(LED_AT);
-        CyDelay(500);
+        DS18B20_initiateConversion();
+        CyDelay(750);
+        short temp100 = DS18B20_GetCurrentTempX100();
+        SetDisplayChars((temp100/10), displayChars + 4);
+        SetUpperPoint(ON);
     }
+    
 }
 

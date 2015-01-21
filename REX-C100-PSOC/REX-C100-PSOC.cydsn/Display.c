@@ -126,7 +126,7 @@ void SetUpperPoint(unsigned char state)
 void SetLowerPoint(unsigned char state)
 {
     if(state) {
-        displayChars[1] &= ~(1<<0);    // Set upper point
+        displayChars[1] &= ~(1<<0);    // Set Lower point
     } else {
         displayChars[1] |= (1<<0);
     }
