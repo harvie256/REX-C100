@@ -1,5 +1,3 @@
-
-
 #include <project.h>
 #include "Display.h"
 
@@ -27,28 +25,13 @@ void ClearLED(uint8 led)
     LEDs_State |= (1<<led);
 }
 
-int SetDisplayChars(short value, unsigned char* array)
+void SetDisplayChars(char* buffer)
 {
-    int8 i;
-    int8 numPos = 4;
-    uint16 tmp;
-    if(value > 9999) return 1; // Too high to display on 4 segments
-    if(value < 0)
+    int i;
+    for(i = 0; i<8; i++)
     {
-        if(value < -999) return 1; // Too low to display with the minus sign
-        
-        *(array + 3) = segmentDecoder('-');
-        value = -value;
-        numPos = 3;
+        displayChars[i] = segmentDecoder(buffer[i]);
     }
-    
-    for(i=0; i < numPos; i++)
-    {
-        tmp = value % 10;
-        value = value / 10;
-        *(array + i) = segmentDecoder('0' + tmp);
-    }
-    return 0;
 }
 
 void DisplayScan()

@@ -32,6 +32,29 @@ void DS18B20_initiateConversion()
     OneWireOutByte(0x44); // perform temperature conversion
 }
 
+short DS18B20_GetCurrentTempQ8_7()
+{
+    unsigned char HighByte, LowByte;
+    short TReading;
+
+    OneWireReset(); 
+    OneWireOutByte(0xcc);  // Skip ROM command (address all devices on the bus)
+    OneWireOutByte(0xbe);  // Read Scratchpad command
+
+    LowByte = OneWireInByte(); 
+    HighByte = OneWireInByte(); 
+    TReading = (HighByte << 8) + LowByte;
+
+    if (TReading & 0x8000) // negative 
+    { 
+        TReading = (TReading ^ 0xffff) + 1;   // 2's comp 
+    }
+    
+    // Treading will be in Q7.4 out of the sensor.  12 bits, the lower 4 bits are fractional
+    // Convert to Q8.7 by << 3.
+    return (TReading << 3);
+}
+
 short DS18B20_GetCurrentTempX100() 
 {   
     unsigned char HighByte, LowByte;
@@ -50,7 +73,7 @@ short DS18B20_GetCurrentTempX100()
         TReading = (TReading ^ 0xffff) + 1;   // 2's comp 
     } 
 
-    return (6 * TReading) + TReading / 4;    // multiply by (100 * 0.0625) or 6.25 
+    return (6 * TReading) + (TReading >> 2);    // multiply by (100 * 0.0625) or 6.25 
 }	
 
 unsigned char OneWireReset()

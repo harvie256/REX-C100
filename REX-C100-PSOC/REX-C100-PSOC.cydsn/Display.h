@@ -14,6 +14,6 @@ extern unsigned char displayChars[8];
 void DisplayScan();
 void SetUpperPoint(unsigned char state);
 void SetLowerPoint(unsigned char state);
-int SetDisplayChars(short value, unsigned char* array);
+void SetDisplayChars(char* buffer);
 void SetLED(unsigned char led);
 void ClearLED(unsigned char led);
